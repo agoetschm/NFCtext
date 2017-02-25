@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ch.goetschy.android.nfctext"
+    android:versionCode="2"
+    android:versionName="1.1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/ch.goetschy.android.nfctext" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MsgListActivity"
+            android:label="@string/title_activity_msg_list"
+            android:parentActivityName="ch.goetschy.android.nfctext.MainActivity" >
+        </activity>
+
+        <provider
+            android:name="ch.goetschy.android.nfctext.contentprovider.MyContentProvider"
+            android:authorities="ch.goetschy.android.nfctext.contentprovider"
+            android:multiprocess="true" >
+        </provider>
+    </application>
+
+</manifest>

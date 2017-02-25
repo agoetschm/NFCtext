@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NFCText</string>
+    <string name="send_text_hint">Type the text you want to send</string>
+    <string name="instructions">Place your device back-to-back with the target device to share your text.</string>
+    <string name="title_activity_msg_list">Texts</string>
+    <string name="no_texts">You have no texts.</string>
+    
+    
+    <string name="action_go_texts">TEXTS</string>
+    
+
+</resources>

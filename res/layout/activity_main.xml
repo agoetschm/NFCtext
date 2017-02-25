@@ -1,0 +1,87 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context="${relativePackage}.${activityClass}" >
+
+        <LinearLayout
+            android:id="@+id/box_enable_nfc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/nfc_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="state"
+                android:textColor="#AAAAAA" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Switch
+                android:id="@+id/switch_enable_nfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="6dp"
+                android:textOff="OFF"
+                android:textOn="ON" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/box_send_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/box_enable_nfc"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/send_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="top|left"
+                android:hint="@string/send_text_hint"
+                android:inputType="textMultiLine"
+                android:lines="8" >
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/box_send_text"
+            android:text="@string/instructions"
+            android:textColor="#AAAAAA"
+            android:visibility="invisible" />
+
+<!--         <TextView -->
+<!--             android:id="@+id/text" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_below="@id/instructions" /> -->
+
+<!--         <Button -->
+<!--             android:id="@+id/loopbut" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_below="@id/text" -->
+<!--             android:text="loop" /> -->
+    </RelativeLayout>
+
+</ScrollView>
